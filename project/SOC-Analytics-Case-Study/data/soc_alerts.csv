@@ -1,6 +1,6 @@
 Alert_ID,Date,Alert_Type,Severity,Source,Department,Analyst,Resolution_Time_Minutes,False_Positive,Status
-1001,2026-01-01,Phishing,High,Email,Finance,Amanda,45,No,Resolved
-1002,2026-01-02,Failed Login,Medium,VPN,HR,James,30,Yes,Closed
-1003,2026-01-03,Malware,Critical,Endpoint,Engineering,Sarah,120,No,Resolved
-1004,2026-01-04,Firewall Alert,Low,Network,Finance,David,20,Yes,Closed
-1005,2026-01-05,Data Exfiltration,Critical,DLP,Executive,Michael,180,No,Investigating
+1001,2026-01-01,Phishing,High,Email,Finance,Peter,45,No,Resolved
+1002,2026-01-02,Failed Login,Medium,VPN,HR,Clark,30,Yes,Closed
+1003,2026-01-03,Malware,Critical,Endpoint,Engineering,Bruce,120,No,Resolved
+1004,2026-01-04,Firewall Alert,Low,Network,Finance,Steve,20,Yes,Closed
+1005,2026-01-05,Data Exfiltration,Critical,DLP,Executive,Tony,180,No,Investigating
