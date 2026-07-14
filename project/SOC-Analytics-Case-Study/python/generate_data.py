@@ -1,6 +1,7 @@
 import pandas as pd
 import random
 from datetime import datetime, timedelta
+from pathlib import Path
 
 #number of alerts
 number_of_alerts = 5000
@@ -35,7 +36,7 @@ departments = [
     "Finance",
     "Engineering",
     "Human Resources",
-    "Operation",
+    "Operations",
     "Executive"
 ]
 
@@ -76,10 +77,13 @@ for i in range(number_of_alerts):
 
 df= pd.DataFrame(data)
 
-df.to_csv(
-    "../data/soc_alerts.csv",
-    index=False
-)
+output_path = Path(__file__).parent.parent / "data" / "soc_alerts.csv"
+
+
+print(__file__)
+print(output_path)
+
+df.to_csv(output_path, index=False)
 
 print("SOC dataset created!")
 print(df.head())
