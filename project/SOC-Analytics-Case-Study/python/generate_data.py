@@ -1,48 +1,56 @@
-import pandas as pandas
+import pandas as pd
 import random
-from datetime import datatime, timedelta
+from datatime import datatime, timedelta
 
 #number of alerts
 number_of_alerts = 5000
 
 #list of soc data
 alert_types = [
-    "Phishing"
-    "Failed Login"
-    "Malware"
-    "Firewall Alert"
-    "Data Exfiltration"
-    "Privilege Escalation"
+    "Phishing",
+    "Failed Login",
+    "Malware",
+    "Firewall Alert",
+    "Data Exfiltration",
+    "Privilege Escalation",
 ]
 
 severity_levels = [
-    "Low"
-    "Medium"
-    "High"
-    "Critical"
+    "Low",
+    "Medium",
+    "High",
+    "Critical",
 ]
 
 sources = [
-    "Email"
-    "VPN"
-    "Endpoint"
-    "Firewall"
-    "DLP"
-    "Identity Provider"
+    "Email",
+    "VPN",
+    "Endpoint",
+    "Firewall",
+    "DLP",
+    "Identity Provider",
+]
+
+departments = [
+    "Finance",
+    "Engineering",
+    "Human Resources",
+    "Operation",
+    "Executive"
 ]
 
 analysts = [
-    "Peter"
-    "Clark"
-    "Bruce"
-    "Tony"
-    "Steve"
+    "Peter",
+    "Clark",
+    "Bruce",
+    "Tony",
+    "Steve",
 ]
 
 statuses = [
-    "Resolved"
-    "In progress"
-    "Closed"
+    "Resolved",
+    "In progress",
+    "Closed",
     
 ]
 
@@ -52,7 +60,7 @@ start_date = datetime(2026,1,1)
 
 for i in range(number_of_alerts):
     alert = {
-        "Alert_ID": i + 1
+        "Alert_ID": i + 1,
         "Date": start_date + timedelta(days=random.randint(0,180)),
         "Alert_Type": random.choice(alert_types),
         "Severity": random.choice(severity_levels),
@@ -69,7 +77,7 @@ for i in range(number_of_alerts):
 df= pd.DataFrame(data)
 
 df.to_csv(
-    "benjaminfrankpham-del/benjaminfrankpham.github.io/project/SOC-Analytics-Case-Study/data/soc_alerts.csv",
+    "../data/soc_alerts.csv",
     index=False
 )
 
