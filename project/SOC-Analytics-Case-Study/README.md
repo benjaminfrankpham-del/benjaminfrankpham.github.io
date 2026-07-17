@@ -28,4 +28,4 @@ https://app.powerbi.com/reportEmbed?reportId=0b9f0f9b-b8d3-43a4-9fc9-57b843e1aaf
 
 ## Dashboard Preview
 
-add image of dashboard
+![SOC Dashboard](screenshots/SOC_dashboard.png)
