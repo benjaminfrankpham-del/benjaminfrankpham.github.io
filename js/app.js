@@ -1,15 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    initBackground();
+    console.log("APP STARTED");
 
-    initCursor();
 
-    initMenu();
+    if(typeof initBackground === "function"){
+        initBackground();
+    }
 
-    initAnimations();
 
-    initProjects();
+    if(typeof initCursor === "function"){
+        initCursor();
+    }
 
-    initScroll();
+
+    if(typeof initMenu === "function"){
+        initMenu();
+    }
+
+
+    if(typeof initAnimations === "function"){
+        initAnimations();
+    }
+
 
 });
