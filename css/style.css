@@ -1122,21 +1122,151 @@ ABOUT SECTION
    CONTACT SECTION
 ========================= */
 
+
 .contact-section{
 
     padding:120px 8%;
-    position:relative;
 
 }
 
 
+
+.contact-header{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+
+.contact-header h2{
+
+    font-size:clamp(3rem,5vw,5rem);
+
+    font-weight:700;
+
+    letter-spacing:-2px;
+
+    margin-bottom:20px;
+
+}
+
+
+.contact-header h2 span{
+
+    color:#4DA3FF;
+
+}
+
+
+.contact-header p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#94A3B8;
+
+    font-size:1.1rem;
+
+}
+
+
+
+/* WHAT I CAN HELP WITH */
+
+.help-section{
+
+    width:100%;
+
+    margin-bottom:80px;
+
+    text-align:center;
+
+}
+
+
+.help-section h3{
+
+    font-size:28px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.help-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+
+.help-card{
+
+    padding:25px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    text-align:left;
+
+    transition:.3s;
+
+}
+
+
+
+.help-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#4DA3FF;
+
+}
+
+
+
+.help-card h4{
+
+    margin-bottom:12px;
+
+}
+
+
+
+.help-card p{
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+}
+
+
+
+/* BOTTOM CONTACT */
+
 .contact-container{
 
     max-width:1200px;
+
     margin:auto;
 
     display:grid;
+
     grid-template-columns:1fr 450px;
+
     gap:80px;
 
     align-items:start;
@@ -1145,107 +1275,23 @@ ABOUT SECTION
 
 
 
-/* LEFT SIDE */
-
-.contact-left h2{
-
-    font-size:60px;
-    line-height:1.1;
-    margin-bottom:25px;
-
-}
-
-
-.contact-left h2 span{
-
-    color:#4da3ff;
-
-}
-
-
-
-.contact-left p{
-
-    color:#aeb8c5;
-    font-size:18px;
-    line-height:1.7;
-
-    max-width:520px;
-
-}
-
-
+/* LEFT */
 
 .contact-left h3{
 
-    margin-top:55px;
+    font-size:28px;
+
     margin-bottom:25px;
 
-    font-size:22px;
-
 }
 
 
 
-/* HELP CARDS */
-
-.help-grid{
-
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-
-}
-
-
-.help-card{
-
-    padding:25px;
-
-    background:
-    rgba(255,255,255,0.04);
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    border-radius:18px;
-
-    transition:.3s;
-
-}
-
-
-.help-card:hover{
-
-    transform:translateY(-5px);
-
-    border-color:#4da3ff;
-
-}
-
-
-.help-card h4{
-
-    margin-bottom:12px;
-    font-size:17px;
-
-}
-
-
-.help-card p{
-
-    font-size:14px;
-
-}
-
-
-
-
-/* CONNECT BOX */
+/* SOCIAL */
 
 .social-card{
 
-    background:
-    rgba(255,255,255,0.04);
+    background:rgba(255,255,255,.04);
 
     border:1px solid rgba(255,255,255,.08);
 
@@ -1263,14 +1309,11 @@ ABOUT SECTION
 
     justify-content:space-between;
 
-    align-items:center;
-
     padding:18px;
 
     margin-bottom:12px;
 
-    background:
-    rgba(255,255,255,.03);
+    background:rgba(255,255,255,.03);
 
     border-radius:12px;
 
@@ -1278,45 +1321,21 @@ ABOUT SECTION
 
     text-decoration:none;
 
-    transition:.3s;
-
 }
 
 
 
-.social-card a:hover{
-
-    background:
-    rgba(77,163,255,.12);
-
-    transform:translateX(5px);
-
-}
-
-
-
-/* RIGHT FORM */
+/* FORM */
 
 .contact-right{
 
+    background:rgba(255,255,255,.05);
 
-    background:
-    rgba(255,255,255,.05);
-
-
-    border:
-
-    1px solid rgba(255,255,255,.1);
-
+    border:1px solid rgba(255,255,255,.1);
 
     border-radius:25px;
 
-
     padding:35px;
-
-
-    backdrop-filter:blur(15px);
-
 
 }
 
@@ -1335,31 +1354,19 @@ ABOUT SECTION
 .contact-right input,
 .contact-right textarea{
 
-
     width:100%;
 
-    padding:16px 18px;
+    padding:16px;
 
     margin-bottom:18px;
 
+    background:rgba(255,255,255,.06);
 
-    background:
-
-    rgba(255,255,255,.06);
-
-
-    border:
-
-    1px solid rgba(255,255,255,.1);
-
+    border:1px solid rgba(255,255,255,.1);
 
     border-radius:12px;
 
-
     color:white;
-
-    font-size:15px;
-
 
 }
 
@@ -1369,52 +1376,47 @@ ABOUT SECTION
 
     height:150px;
 
-    resize:none;
-
 }
 
 
 
-.contact-right button{
-
+.send-button{
 
     width:100%;
 
     padding:16px;
 
-
     border:none;
 
     border-radius:50px;
 
-
-    background:#4da3ff;
-
+    background:#4DA3FF;
 
     color:white;
 
-    font-size:16px;
-
     cursor:pointer;
 
-
-    transition:.3s;
-
-
 }
 
 
 
-.contact-right button:hover{
+@media(max-width:900px){
 
 
-    transform:translateY(-3px);
+    .help-grid{
 
-    box-shadow:0 10px 30px rgba(77,163,255,.35);
+        grid-template-columns:1fr;
 
+    }
+
+
+    .contact-container{
+
+        grid-template-columns:1fr;
+
+    }
 
 }
-
 
 
 
@@ -1581,5 +1583,436 @@ ABOUT SECTION
 .send-button.success .send-text {
 
     opacity:0;
+
+}
+
+.help-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4, 1fr);
+
+    gap:20px;
+
+    width:100%;
+
+}
+
+.contact-right{
+
+    width:100%;
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border:
+    1px solid rgba(255,255,255,0.1);
+
+    border-radius:25px;
+
+    padding:35px;
+
+}
+
+
+.contact-right form{
+
+    width:100%;
+
+}
+
+
+.contact-right input,
+.contact-right textarea{
+
+    width:100%;
+
+    display:block;
+
+}
+
+@media(max-width:900px){
+
+    .help-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .contact-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* =========================
+   SOCIAL CARD HOVER EFFECT
+========================= */
+
+.social-card a{
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s ease;
+
+}
+
+
+
+.social-card a:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#4DA3FF;
+
+    background:rgba(77,163,255,.12);
+
+    box-shadow:
+    0 10px 25px rgba(77,163,255,.15);
+
+}
+
+/* =========================
+   SKILLS GRID
+========================= */
+
+
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    width:100%;
+
+}
+
+
+
+.skill-card{
+
+    height:160px;
+
+    background:
+    rgba(255,255,255,.04);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    transition:.3s ease;
+
+}
+
+
+
+.skill-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#4DA3FF;
+
+    box-shadow:
+    0 10px 30px rgba(77,163,255,.15);
+
+}
+
+
+
+.skill-icon{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:35px;
+
+    color:#4DA3FF;
+
+}
+
+
+
+.skill-card h4{
+
+    font-size:18px;
+
+    font-weight:500;
+
+}
+
+
+
+@media(max-width:900px){
+
+    .skills-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .skills-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* =========================
+   PROJECT SECTION
+========================= */
+
+
+.projects-section{
+
+    height:100vh;
+
+    overflow:hidden;
+
+    padding:120px 0;
+
+}
+
+
+
+.projects-title{
+
+    text-align:center;
+
+    margin-bottom:80px;
+
+}
+
+
+.projects-title h2{
+
+    font-size:5rem;
+
+}
+
+
+.projects-title span{
+
+    color:#4DA3FF;
+
+}
+
+
+.projects-title p{
+
+    color:#94A3B8;
+
+}
+
+
+
+
+.projects-container{
+
+    overflow:hidden;
+
+}
+
+
+
+.projects-track{
+
+    display:flex;
+
+    gap:50px;
+
+    padding-left:8%;
+
+    width:max-content;
+
+}
+
+
+
+
+.project-panel{
+
+
+    width:650px;
+
+    height:420px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        rgba(77,163,255,.18),
+        rgba(255,255,255,.04)
+    );
+
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+
+    border-radius:35px;
+
+
+    padding:50px;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+
+    position:relative;
+
+
+    backdrop-filter:blur(20px);
+
+
+}
+
+
+
+
+.project-panel:hover{
+
+
+    border-color:#4DA3FF;
+
+
+}
+
+
+
+
+
+.project-number{
+
+
+    position:absolute;
+
+    top:30px;
+
+    right:40px;
+
+
+    font-size:80px;
+
+    font-weight:700;
+
+
+    color:rgba(255,255,255,.08);
+
+
+}
+
+
+
+
+
+.project-content h3{
+
+
+    font-size:42px;
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+.project-content p{
+
+
+    color:#94A3B8;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+
+    max-width:500px;
+
+
+}
+
+
+
+
+.project-tech{
+
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:35px;
+
+
+}
+
+
+
+.project-tech span{
+
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+
+    background:rgba(77,163,255,.15);
+
+
+    border:1px solid rgba(77,163,255,.3);
+
+
+}
+
+
+
+@media(max-width:900px){
+
+
+.project-panel{
+
+    width:85vw;
+
+}
+
 
 }

@@ -1,76 +1,198 @@
 console.log("animations.js loaded");
 
 
+
+/* =========================
+   SCRAMBLE TEXT EFFECT
+========================= */
+
+
 function scrambleText(element, finalText, duration = 2000) {
 
-    if (!element) return;
+
+    if(!element) return;
 
 
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    let start = null;
-
-
-    function animate(time) {
+    const chars =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 
-        if (!start) start = time;
+    let frame = 0;
 
 
-        let progress = (time - start) / duration;
+    const totalFrames = duration / 50;
 
 
-        let revealed = Math.floor(progress * finalText.length);
+
+    const interval = setInterval(()=>{
 
 
         let output = "";
 
 
+
         for(let i = 0; i < finalText.length; i++){
 
 
-            if(i < revealed){
+            if(i < (frame / totalFrames) * finalText.length){
+
 
                 output += finalText[i];
 
-            }
-            else if(finalText[i] === " "){
-
-                output += " ";
 
             }
             else{
 
-                output += chars[Math.floor(Math.random() * chars.length)];
+
+                output += chars[
+                    Math.floor(Math.random() * chars.length)
+                ];
+
 
             }
 
+
         }
+
 
 
         element.innerHTML = output;
 
 
+        frame++;
 
-        if(progress < 1){
 
-            requestAnimationFrame(animate);
 
-        }
-        else{
+        if(frame >= totalFrames){
+
+
+            clearInterval(interval);
+
 
             element.innerHTML = finalText;
 
+
         }
 
-    }
 
+    },50);
 
-    requestAnimationFrame(animate);
 
 }
 
 
+
+
+
+
+
+/* =========================
+   HORIZONTAL PROJECT SCROLL
+========================= */
+
+
+function initProjectScroll(){
+
+
+    console.log("Project scroll loading");
+
+
+
+    const track =
+    document.querySelector(".projects-track");
+
+
+
+    if(!track){
+
+        console.log("No project track found");
+
+        return;
+
+    }
+
+
+
+    if(typeof ScrollTrigger === "undefined"){
+
+
+        console.log("ScrollTrigger missing");
+
+
+        return;
+
+
+    }
+
+
+
+
+    gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+    let amount =
+    track.scrollWidth - window.innerWidth;
+
+
+
+
+    gsap.to(track,{
+
+
+        x:-amount,
+
+
+        ease:"none",
+
+
+
+        scrollTrigger:{
+
+
+            trigger:".projects-section",
+
+
+            start:"top top",
+
+
+
+            end:()=>"+=" + amount,
+
+
+
+            scrub:1,
+
+
+
+            pin:true,
+
+
+
+            anticipatePin:1
+
+
+
+        }
+
+
+    });
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   PAGE ANIMATIONS
+========================= */
 
 
 function initAnimations(){
@@ -80,99 +202,170 @@ function initAnimations(){
 
 
 
+
+    // MENU BUTTON
+
+
     gsap.from(".menu-btn",{
+
 
         y:-50,
 
+
         opacity:0,
+
 
         duration:1
 
+
     });
 
+
+
+
+
+
+
+    // HERO TAG
 
 
     gsap.from(".hero-tag",{
 
+
         x:-100,
+
 
         opacity:0,
 
+
         duration:1,
+
 
         delay:.3
 
+
     });
 
 
 
-    const name = document.querySelector(".hero h1");
-
-    const title = document.querySelector(".hero h2");
 
 
 
-    // make visible
 
-    gsap.set(name,{
-        opacity:1
-    });
+    // HERO TEXT
 
 
-    gsap.set(title,{
-        opacity:1
-    });
+    const name =
+    document.querySelector(".hero h1");
 
 
-
-    // START NAME
-
-    scrambleText(
-
-        name,
-
-        "Benjamin Pham",
-
-        2500
-
-    );
+    const title =
+    document.querySelector(".hero h2");
 
 
 
-    // START TITLE AFTER NAME
 
 
-    setTimeout(()=>{
+
+    if(name){
+
+
+        gsap.set(name,{
+
+            opacity:1
+
+        });
+
 
 
         scrambleText(
 
-            title,
+            name,
 
-            "Cybersecurity Analyst",
+            "Benjamin Pham",
 
-            2500
+            2000
 
         );
 
 
-    },1500);
+    }
 
 
 
+
+
+
+
+    if(title){
+
+
+        gsap.set(title,{
+
+            opacity:1
+
+        });
+
+
+
+        setTimeout(()=>{
+
+
+            scrambleText(
+
+                title,
+
+                "Cybersecurity Analyst",
+
+                2000
+
+            );
+
+
+        },1800);
+
+
+
+    }
+
+
+
+
+
+
+
+
+    // HERO DESCRIPTION
 
 
     gsap.from(".hero-description",{
 
+
         y:40,
+
 
         opacity:0,
 
+
         duration:1,
+
 
         delay:4
 
+
+
     });
+
+
+
+
+
+
+    // START PROJECT SCROLL
+
+
+    initProjectScroll();
+
 
 
 }
