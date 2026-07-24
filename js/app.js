@@ -177,3 +177,191 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+/* =========================
+   PROJECT DETAILS MODAL
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    const detailsButton = document.getElementById("project-details-btn");
+
+    const modal = document.getElementById("project-modal");
+
+    const closeButton = document.getElementById("modal-close");
+
+
+    const modalImage = document.getElementById("modal-image");
+
+    const modalTitle = document.getElementById("modal-title");
+
+    const modalDescription = document.getElementById("modal-description");
+
+    const modalLink = document.getElementById("modal-link");
+
+
+    const projects = document.querySelectorAll(".project-item");
+
+
+
+    if(
+        !detailsButton ||
+        !modal ||
+        !closeButton
+    ){
+
+        console.log("Project modal elements missing");
+
+        return;
+
+    }
+
+
+
+
+    let activeProject = projects[0];
+
+
+
+    /*
+       Detect active project
+       when scrolling changes project
+    */
+
+    projects.forEach(project=>{
+
+
+        project.addEventListener("click",()=>{
+
+            activeProject = project;
+
+        });
+
+
+    });
+
+
+
+    /*
+       OPEN MODAL
+    */
+
+    detailsButton.addEventListener("click",()=>{
+
+
+        if(!activeProject) return;
+
+
+
+        const image =
+        activeProject.dataset.image;
+
+
+        const title =
+        activeProject.dataset.title;
+
+
+        const description =
+        activeProject.dataset.description;
+
+
+        const link =
+        activeProject.dataset.link;
+
+
+
+
+        modalImage.src = image;
+
+        modalTitle.textContent = title;
+
+        modalDescription.textContent = description;
+
+        modalLink.href = link;
+
+
+
+        modal.classList.add("active");
+
+        document.body.style.overflow="hidden";
+
+
+
+    });
+
+
+
+
+
+    /*
+       CLOSE MODAL
+    */
+
+    function closeModal(){
+
+
+        modal.classList.remove("active");
+
+
+        document.body.style.overflow="";
+
+
+    }
+
+
+
+
+
+    closeButton.addEventListener(
+        "click",
+        closeModal
+    );
+
+
+
+
+    /*
+       CLICK OUTSIDE TO CLOSE
+    */
+
+    modal.addEventListener(
+        "click",
+        (e)=>{
+
+
+            if(e.target === modal){
+
+                closeModal();
+
+            }
+
+
+        }
+    );
+
+
+
+
+
+    /*
+       ESC KEY CLOSE
+    */
+
+    document.addEventListener(
+        "keydown",
+        (e)=>{
+
+
+            if(e.key==="Escape"){
+
+                closeModal();
+
+            }
+
+
+        }
+    );
+
+
+});

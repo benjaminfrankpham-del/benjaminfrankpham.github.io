@@ -161,6 +161,18 @@
 <h2>
 
 </h2>
+
+<!-- SCROLL INDICATOR -->
+
+<div class="scroll-indicator">
+
+    <span>Scroll Down</span>
+
+    <div class="scroll-arrow">
+        ↓
+    </div>
+
+</div>
  
             <!--<p class="hero-description">
 
@@ -326,7 +338,10 @@
     <div class="skill-card">
 
         <div class="skill-icon">
-            <!-- ICON GOES HERE -->
+            <img
+            src="/assets/icons/005-python.png"
+            alt="Python Logo"
+        >
         </div>
 
         <h4>Python</h4>
@@ -337,32 +352,39 @@
     <div class="skill-card">
 
         <div class="skill-icon">
-            
+            <img
+            src="/assets/icons/006-sql.png"
+            alt="SQL Logo"
+        >
         </div>
 
         <h4>SQL</h4>
 
     </div>
 
-
     <div class="skill-card">
 
         <div class="skill-icon">
-            
-        </div>
-
-        <h4>AWS</h4>
-
-    </div>
-
-
-    <div class="skill-card">
-
-        <div class="skill-icon">
-            
+            <img
+            src="/assets/icons/power-bi-icon.png"
+            alt="Power BI Logo"
+        >
         </div>
 
         <h4>Power BI</h4>
+
+    </div>
+
+    <div class="skill-card">
+
+        <div class="skill-icon">
+            <img
+            src="/assets/icons/002-excel.png"
+            alt="Microsoft Excel Logo"
+        >
+        </div>
+
+        <h4>Microsoft Excel</h4>
 
     </div>
 
@@ -461,91 +483,137 @@
 
 
 <!-- =========================
-     PROJECTS SECTION
+     FEATURED PROJECTS
 ========================= -->
 
 <section class="projects-showcase" id="projects">
 
+    <div class="projects-header">
 
-<div class="projects-header">
+        <h2>Featured Projects</h2>
 
-    <h2>Featured Projects</h2>
+        <p>
+            A selection of projects showcasing cybersecurity, cloud, automation,
+            analytics, and software engineering.
+        </p>
 
-    <p>
-        A collection of cybersecurity, automation, and analytics projects.
-    </p>
-
-</div>
-
-
+    </div>
 
     <div class="projects-container">
 
-
-        <!-- LEFT PROJECT TITLES -->
+        <!-- LEFT SIDE -->
 
         <div class="projects-list">
 
-
             <div class="project-item active"
-                 data-image="../assets/images/SOC_dashboard.png">
 
-                SOC Analytics Case Study
+    data-image="assets/images/SOC_dashboard.png"
 
-            </div>
+    data-title="SOC Analytics Case Study"
 
+    data-description="Built a complete SOC analytics platform using Python, SQL, SQLite and Power BI to analyze 5,000 simulated security alerts, analyst performance, SLA compliance, MITRE ATT&CK coverage and operational KPIs."
+
+    data-link="https://github.com/benjaminfrankpham-del/benjaminfrankpham.github.io/blob/724efcdb16fae6056e5159b0ae40aedcf7d6aa88/project/SOC-Analytics-Case-Study/README.md">
+
+    SOC Analytics Case Study
+
+</div>
 
             <div class="project-item"
-                 data-image="images/cloud-security.png">
+
+                data-image="images/cloud-security.png"
+
+                data-title="Cloud Security Platform"
+
+                data-description="Designed a cloud security architecture demonstrating IAM, networking, monitoring, security best practices and AWS infrastructure."
+
+                data-link="#">
 
                 Cloud Security Platform
 
             </div>
 
-
             <div class="project-item"
-                 data-image="images/threat-detection.png">
+
+                data-image="images/threat-detection.png"
+
+                data-title="Threat Detection System"
+
+                data-description="Threat detection platform focused on SOC monitoring, detection engineering, automation workflows and incident response."
+
+                data-link="#">
 
                 Threat Detection System
 
             </div>
 
-
             <div class="project-item"
-                 data-image="images/portfolio.png">
+
+                data-image="images/portfolio.png"
+
+                data-title="Cybersecurity Portfolio"
+
+                data-description="Interactive personal portfolio built with HTML, CSS, JavaScript and GSAP featuring advanced animations and project showcases."
+
+                data-link="#">
 
                 Cybersecurity Portfolio
 
             </div>
 
-
         </div>
 
-
-
-
-
-        <!-- RIGHT PROJECT IMAGE -->
+        <!-- RIGHT SIDE -->
 
         <div class="project-display">
 
+            <div class="project-card">
 
-            <div class="project-image">
+                <img
 
+                    id="project-preview"
 
-                <img 
-                src="images/soc-dashboard.png"
-                alt="SOC Analytics Dashboard">
+                    src="assets/images/SOC_dashboard.png"
 
+                    alt="SOC Dashboard"
+
+                >
+
+                <!-- Floating Info Panel -->
+
+                <div class="project-info">
+
+                    <h3 id="project-title">
+
+                        SOC Analytics Case Study
+
+                    </h3>
+
+                    <p id="project-description">
+
+                        Built a complete SOC analytics platform using Python,
+                        SQL, SQLite and Power BI to analyze 5,000 simulated
+                        security alerts, analyst performance and operational KPIs.
+
+                    </p>
+
+                    <button
+
+                        id="project-details-btn"
+
+                        class="project-details-btn">
+
+                        View Details →
+
+                    </button>
+
+                </div>
 
             </div>
 
-
         </div>
 
-
     </div>
-
 
 </section>
   
@@ -765,6 +833,61 @@
 <script src="js/animations.js"></script>
 <script src="js/app.js"></script>
 
+<!-- PROJECT DETAILS MODAL -->
+
+<div class="project-modal" id="project-modal">
+
+    <div class="modal-content">
+
+        <button class="modal-close" id="modal-close">
+            ✕
+        </button>
+
+
+        <img 
+        id="modal-image"
+        src=""
+        alt="Project Preview">
+
+
+        <div class="modal-text">
+
+            <h2 id="modal-title">
+                Project Title
+            </h2>
+
+
+            <p id="modal-description">
+                Project description goes here.
+            </p>
+
+
+            <div class="modal-tech">
+
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Power BI</span>
+
+            </div>
+
+
+            <a 
+            id="modal-link"
+            href="#"
+            target="_blank"
+            class="modal-button">
+
+                View Project →
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</div>
 
 </body>
 
