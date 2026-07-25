@@ -211,7 +211,7 @@ ScrollTrigger.create({
 
     trigger: section,
 
-    start: "top 10px",
+    start: "top 20px",
 
     end: () => "+=" + (projects.length * 800),
 

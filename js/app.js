@@ -178,12 +178,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+
 /* =========================
    PROJECT DETAILS MODAL
 ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
+    const projects = document.querySelectorAll(".project-item");
 
     const detailsButton = document.getElementById("project-details-btn");
 
@@ -201,40 +204,64 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalLink = document.getElementById("modal-link");
 
 
-    const projects = document.querySelectorAll(".project-item");
-
-
 
     if(
+        !projects.length ||
         !detailsButton ||
-        !modal ||
-        !closeButton
+        !modal
     ){
 
-        console.log("Project modal elements missing");
-
+        console.log("Project modal missing elements");
         return;
 
     }
 
 
 
-
-    let activeProject = projects[0];
+    let activeProject = document.querySelector(".project-item.active");
 
 
 
     /*
-       Detect active project
-       when scrolling changes project
+        CHANGE ACTIVE PROJECT
     */
 
-    projects.forEach(project=>{
+    projects.forEach(project => {
 
 
-        project.addEventListener("click",()=>{
+        project.addEventListener("click", ()=>{
+
+
+            projects.forEach(item => {
+
+                item.classList.remove("active");
+
+            });
+
+
+            project.classList.add("active");
+
 
             activeProject = project;
+
+
+
+            // Update preview image
+
+            document.getElementById("project-preview").src =
+            project.dataset.image;
+
+
+
+            document.getElementById("project-title").textContent =
+            project.dataset.title;
+
+
+
+            document.getElementById("project-description").textContent =
+            project.dataset.description;
+
+
 
         });
 
@@ -243,49 +270,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
     /*
-       OPEN MODAL
+        OPEN MODAL
     */
 
-    detailsButton.addEventListener("click",()=>{
+    detailsButton.addEventListener("click", ()=>{
 
 
         if(!activeProject) return;
 
 
 
-        const image =
+        modalImage.src =
         activeProject.dataset.image;
 
 
-        const title =
+
+        modalTitle.textContent =
         activeProject.dataset.title;
 
 
-        const description =
+
+        modalDescription.textContent =
         activeProject.dataset.description;
 
 
-        const link =
+
+        modalLink.href =
         activeProject.dataset.link;
-
-
-
-
-        modalImage.src = image;
-
-        modalTitle.textContent = title;
-
-        modalDescription.textContent = description;
-
-        modalLink.href = link;
 
 
 
         modal.classList.add("active");
 
-        document.body.style.overflow="hidden";
 
+        document.body.style.overflow="hidden";
 
 
     });
@@ -294,22 +315,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
     /*
-       CLOSE MODAL
+        CLOSE MODAL
     */
 
     function closeModal(){
 
-
         modal.classList.remove("active");
-
 
         document.body.style.overflow="";
 
-
     }
-
-
 
 
 
@@ -320,15 +337,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-    /*
-       CLICK OUTSIDE TO CLOSE
-    */
-
     modal.addEventListener(
         "click",
         (e)=>{
-
 
             if(e.target === modal){
 
@@ -336,29 +347,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-
         }
     );
 
 
 
-
-
-    /*
-       ESC KEY CLOSE
-    */
-
     document.addEventListener(
         "keydown",
         (e)=>{
 
-
-            if(e.key==="Escape"){
+            if(e.key === "Escape"){
 
                 closeModal();
 
             }
-
 
         }
     );

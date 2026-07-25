@@ -573,7 +573,7 @@ body{
 
     padding:30px;
 
-    margin-bottom:35px;
+    margin-bottom:10px;
 
     background:rgba(255,255,255,.04);
 
@@ -590,7 +590,7 @@ body{
 
     font-size:1.8rem;
 
-    margin-bottom:10px;
+    margin-bottom:1px;
 
 }
 
@@ -600,7 +600,7 @@ body{
 
     color:#4DA3FF;
 
-    margin-bottom:20px;
+    margin-bottom:10px;
 
 }
 
@@ -683,53 +683,13 @@ body{
 }
 
 /* =========================
-   CONTENT CARDS
-========================= */
-
-
-.experience-card,
-.project-card,
-.about-card,
-.certification-card,
-.contact-card{
-
-    padding:30px;
-
-    margin-bottom:35px;
-
-    background:rgba(255,255,255,.04);
-
-    border-left:2px solid #4DA3FF;
-
-    border-radius:12px;
-
-}
-
-/* =========================
    ABOUT GRID
 ========================= */
-
-.about-grid{
-
-    display:grid;
-    grid-template-columns:1.7fr 1fr;
-    gap:70px;
-    width:100%;
-    align-items:start;
-
-}
 
 .about-left{
 
     min-width:0;
 
-}
-
-.about-right{
-
-    display:flex;
-    flex-direction:column;
-    gap:30px;
 }
 
 .about-card{
@@ -849,7 +809,7 @@ body{
 
     grid-template-columns:1.7fr 1fr;
 
-    gap:80px;
+    gap:84px;
 
     align-items:start;
 
@@ -861,7 +821,7 @@ body{
 
     flex-direction:column;
 
-    gap:40px;
+    gap:10px;
 
 }
 
@@ -922,22 +882,44 @@ body{
 .skill-grid{
 
     display:flex;
-
     flex-wrap:wrap;
-
     gap:12px;
+
+    margin-top:20px;
 
 }
 
 .skill-grid span{
 
-    padding:12px 18px;
+    background:rgba(77,163,255,.10);
 
-    border-radius:12px;
+    border:1px solid rgba(77,163,255,.30);
 
-    background:rgba(255,255,255,.04);
+    color:#fff;
 
-    border:1px solid rgba(255,255,255,.08);
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+    font-weight:500;
+
+    transition:all .3s ease;
+
+    cursor:default;
+
+}
+
+.skill-grid span:hover{
+
+    background:#4DA3FF;
+
+    color:#0B0F19;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(77,163,255,.35);
 
 }
 
@@ -3073,4 +3055,41 @@ ABOUT SECTION
 
     }
 
+}
+
+.education-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:2rem;
+    margin-top:10px;
+    transition:.3s ease;
+}
+
+/*.education-card:hover{
+    transform:translateY(-5px);
+    border-color:#2f80ed;
+    box-shadow:0 20px 40px rgba(47,128,237,.15);
+}
+*/
+.education-card h3{
+    margin-bottom:1.5rem;
+    font-size:1.4rem;
+}
+
+.education-item h4{
+    margin-bottom:.5rem;
+    font-size:1.1rem;
+}
+
+.education-item p{
+    margin-bottom:.35rem;
+    color:#c9d1d9;
+}
+
+.education-item span{
+    display:inline-block;
+    margin-top:1rem;
+    color:#7bb7ff;
+    font-weight:500;
 }
