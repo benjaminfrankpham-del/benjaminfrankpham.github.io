@@ -218,98 +218,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    let activeProject = document.querySelector(".project-item.active");
-
-
-
-    /*
-        CHANGE ACTIVE PROJECT
-    */
-
-    projects.forEach(project => {
-
-
-        project.addEventListener("click", ()=>{
-
-
-            projects.forEach(item => {
-
-                item.classList.remove("active");
-
-            });
-
-
-            project.classList.add("active");
-
-
-            activeProject = project;
-
-
-
-            // Update preview image
-
-            document.getElementById("project-preview").src =
-            project.dataset.image;
-
-
-
-            document.getElementById("project-title").textContent =
-            project.dataset.title;
-
-
-
-            document.getElementById("project-description").textContent =
-            project.dataset.description;
-
-
-
-        });
-
-
-    });
-
-
-
 
 
     /*
         OPEN MODAL
     */
 
-    detailsButton.addEventListener("click", ()=>{
+    detailsButton.addEventListener("click", () => {
 
+    // Find whichever project is currently active
+    const activeProject = document.querySelector(".project-item.active");
 
-        if(!activeProject) return;
+    if (!activeProject) return;
 
+    modalImage.src = activeProject.dataset.image;
+    modalTitle.textContent = activeProject.dataset.title;
+    modalDescription.textContent = activeProject.dataset.description;
+    modalLink.href = activeProject.dataset.link;
 
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
 
-        modalImage.src =
-        activeProject.dataset.image;
-
-
-
-        modalTitle.textContent =
-        activeProject.dataset.title;
-
-
-
-        modalDescription.textContent =
-        activeProject.dataset.description;
-
-
-
-        modalLink.href =
-        activeProject.dataset.link;
-
-
-
-        modal.classList.add("active");
-
-
-        document.body.style.overflow="hidden";
-
-
-    });
+});
 
 
 

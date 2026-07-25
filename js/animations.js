@@ -1,6 +1,16 @@
 console.log("animations.js loaded");
 
 
+
+/* =========================
+   GLOBAL ACTIVE PROJECT
+========================= */
+
+let activeProject = null;
+
+
+
+
 /* =========================
    SCRAMBLE TEXT EFFECT
 ========================= */
@@ -64,6 +74,8 @@ function scrambleText(element, finalText, duration = 2000){
 
 
 
+
+
 /* =========================
    FEATURED PROJECT SCROLL
 ========================= */
@@ -97,6 +109,7 @@ function initProjects(){
 
     const description =
     document.querySelector("#project-description");
+    
 
 
 
@@ -119,7 +132,7 @@ function initProjects(){
 
 
 
-    let current = 0;
+    let current = -1;
 
 
 
@@ -141,20 +154,40 @@ function initProjects(){
 
 
 
-        projects[index].classList.add("active");
+        const selectedProject =
+        projects[index];
 
+        activeProject = selectedProject;
+
+
+
+        selectedProject.classList.add("active");
+
+
+
+        // SAVE CURRENT PROJECT
 
 
         const newImage =
-        projects[index].dataset.image;
+        selectedProject.dataset.image;
 
 
         const newTitle =
-        projects[index].dataset.title;
+        selectedProject.dataset.title;
 
 
         const newDescription =
-        projects[index].dataset.description;
+        selectedProject.dataset.description;
+
+        const newLink =
+selectedProject.dataset.link;
+
+activeProject = {
+    image: newImage,
+    title: newTitle,
+    description: newDescription,
+    link: newLink
+};
 
 
 
@@ -173,7 +206,8 @@ function initProjects(){
                 image.src = newImage;
 
 
-                title.textContent = newTitle;
+                title.textContent =
+                newTitle;
 
 
                 description.textContent =
@@ -207,44 +241,183 @@ function initProjects(){
 
 
 
-ScrollTrigger.create({
 
-    trigger: section,
+    // LOAD FIRST PROJECT
 
-    start: "top 20px",
-
-    end: () => "+=" + (projects.length * 800),
-
-    pin: true,
-
-    scrub: 1,
-
-    anticipatePin: 1,
-
-    onUpdate(self){
-
-        let index = Math.floor(
-            self.progress * projects.length
-        );
+    updateProject(0);
 
 
-        if(index >= projects.length){
 
-            index = projects.length - 1;
+
+    ScrollTrigger.create({
+
+        trigger: section,
+
+        start:"top 20px",
+
+        end:()=>"+=" + (projects.length * 800),
+
+        pin:true,
+
+        scrub:1,
+
+        anticipatePin:1,
+
+
+        onUpdate(self){
+
+
+            let index =
+            Math.floor(
+                self.progress * projects.length
+            );
+
+
+
+            if(index >= projects.length){
+
+                index = projects.length - 1;
+
+            }
+
+
+
+            updateProject(index);
+
 
         }
 
-
-        updateProject(index);
-
-    }
-
-});
+    });
 
 
 
 }
 
+
+
+
+
+
+/* =========================
+   PROJECT DETAILS POPUP
+========================= */
+
+
+function initProjectDetails(){
+
+
+    console.log("Project details loaded");
+
+
+    const button =
+    document.querySelector("#project-details-btn");
+
+
+
+    const modal =
+    document.querySelector(".project-modal");
+
+
+
+    if(!button || !modal){
+
+        console.log("Modal missing");
+
+        return;
+
+    }
+
+
+
+    button.addEventListener("click",()=>{
+
+
+        if(!activeProject) return;
+
+
+
+        const modalImage =
+        document.querySelector("#modal-image");
+
+
+        const modalTitle =
+        document.querySelector("#modal-title");
+
+
+        const modalDescription =
+        document.querySelector("#modal-description");
+
+
+        const modalButton =
+document.querySelector("#modal-link");
+
+
+
+        if(modalImage){
+
+            modalImage.src =
+            activeProject.dataset.image;
+
+        }
+
+
+
+        if(modalTitle){
+
+            modalTitle.textContent =
+            activeProject.dataset.title;
+
+        }
+
+
+
+        if(modalDescription){
+
+            modalDescription.textContent =
+            activeProject.dataset.description;
+
+        }
+
+
+
+        if(modalButton){
+
+            modalButton.href =
+            activeProject.dataset.link || "#";
+
+        }
+
+
+
+        modal.classList.add("active");
+
+
+    });
+
+
+
+
+    const closeButton =
+    document.querySelector(".modal-close");
+
+
+
+    if(closeButton){
+
+
+        closeButton.addEventListener("click",()=>{
+
+
+            modal.classList.remove("active");
+
+
+        });
+
+
+    }
+
+
+}
 
 
 
@@ -322,7 +495,6 @@ function initProjectTilt(){
 
         }
     );
-
 
 
 
@@ -413,7 +585,6 @@ function initAnimations(){
 
     if(name){
 
-
         gsap.set(name,{
             opacity:1
         });
@@ -425,7 +596,6 @@ function initAnimations(){
             "Benjamin Pham",
             2000
         );
-
 
     }
 
@@ -479,6 +649,7 @@ function initAnimations(){
 
     initProjects();
 
+    initProjectDetails();
 
     initProjectTilt();
 
