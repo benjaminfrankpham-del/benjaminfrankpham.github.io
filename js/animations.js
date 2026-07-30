@@ -173,12 +173,12 @@ function initProjects(){
         const newLink =
 selectedProject.dataset.link;
 
-activeProject = {
-    image: newImage,
-    title: newTitle,
-    description: newDescription,
-    link: newLink
-};
+// activeProject = {
+//    image: newImage,
+//    title: newTitle,
+//    description: newDescription,
+//    link: newLink
+//};
 
 
 
@@ -304,7 +304,6 @@ function initProjectDetails(){
     document.querySelector("#project-details-btn");
 
 
-
     const modal =
     document.querySelector(".project-modal");
 
@@ -320,67 +319,188 @@ function initProjectDetails(){
 
 
 
+
+    function setText(id,value){
+
+        const element =
+        document.querySelector(id);
+
+
+        if(element){
+
+            element.textContent =
+            value || "";
+
+        }
+
+    }
+
+
+
+
+
+
     button.addEventListener("click",()=>{
 
 
-        if(!activeProject) return;
+        if(!activeProject){
+
+            console.log("No active project");
+
+            return;
+
+        }
 
 
+
+
+        const data =
+        activeProject.dataset;
+
+
+
+
+
+        // IMAGE
 
         const modalImage =
         document.querySelector("#modal-image");
 
 
-        const modalTitle =
-        document.querySelector("#modal-title");
-
-
-        const modalDescription =
-        document.querySelector("#modal-description");
-
-
-        const modalButton =
-document.querySelector("#modal-link");
-
-
-
         if(modalImage){
 
             modalImage.src =
-            activeProject.dataset.image;
+            data.image;
 
         }
 
 
 
-        if(modalTitle){
 
-            modalTitle.textContent =
-            activeProject.dataset.title;
+
+        // TEXT SECTIONS
+
+        setText(
+            "#modal-title",
+            data.title
+        );
+
+
+        setText(
+            "#modal-description",
+            data.description
+        );
+
+
+        setText(
+            "#modal-intro",
+            data.intro
+        );
+
+
+        setText(
+            "#modal-challenges",
+            data.challenges
+        );
+
+
+        setText(
+            "#modal-solution",
+            data.solution
+        );
+
+
+        setText(
+            "#modal-features",
+            data.features
+        );
+
+
+        setText(
+            "#modal-learned",
+            data.learned
+        );
+
+
+
+
+
+
+
+        // TECH STACK TAGS
+
+        const tech =
+        document.querySelector("#modal-tech");
+
+
+
+        if(tech){
+
+
+            tech.innerHTML = "";
+
+
+
+            if(data.tech){
+
+
+                data.tech
+                .split("|")
+                .forEach(item=>{
+
+
+                    const tag =
+                    document.createElement("span");
+
+
+                    tag.textContent =
+                    item.trim();
+
+
+                    tech.appendChild(tag);
+
+
+                });
+
+
+            }
+
 
         }
 
 
 
-        if(modalDescription){
 
-            modalDescription.textContent =
-            activeProject.dataset.description;
 
-        }
+
+        // BUTTON LINK
+
+        const modalButton =
+        document.querySelector("#modal-link");
 
 
 
         if(modalButton){
 
             modalButton.href =
-            activeProject.dataset.link || "#";
+            data.link || "#";
 
         }
 
 
 
+
+
+
+
+        // OPEN MODAL
+
         modal.classList.add("active");
+
+
+
+        modal.classList.add("active");
+
 
 
     });
@@ -388,28 +508,35 @@ document.querySelector("#modal-link");
 
 
 
-    const closeButton =
-    document.querySelector(".modal-close");
 
 
 
-    if(closeButton){
 
+    // Close when clicking outside the popup
+modal.addEventListener("click",(e)=>{
 
-        closeButton.addEventListener("click",()=>{
+    if(e.target === modal){
 
-
-            modal.classList.remove("active");
-
-
-        });
-
+        modal.classList.remove("active");
 
     }
 
+});
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key === "Escape"){
+
+        modal.classList.remove("active");
+
+    }
+
+});
+
+
+
 
 }
-
 
 
 
