@@ -35,8 +35,5 @@ Detection Engineering
 False Positive Analysis
 
 ## View the live SOC Analytics Dashboard here: 
-
-## Live Dashboard
-
-[View the Interactive Power BI Dashboard](https://app.powerbi.com/reportEmbed?reportId=0b9f0f9b-b8d3-43a4-9fc9-57b843e1aaf9&autoAuth=true&ctid=92ebe562-ecd9-47fa-b107-065ebb49968e&actionBarEnabled=true)
+[Interactive Power BI Dashboard](https://app.powerbi.com/reportEmbed?reportId=0b9f0f9b-b8d3-43a4-9fc9-57b843e1aaf9&autoAuth=true&ctid=92ebe562-ecd9-47fa-b107-065ebb49968e&actionBarEnabled=true)
 

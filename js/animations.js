@@ -15,28 +15,23 @@ let activeProject = null;
    SCRAMBLE TEXT EFFECT
 ========================= */
 
-function scrambleText(element, finalText, duration = 2000){
+function scrambleText(element, finalText, duration = 900){
 
     if(!element) return;
-
 
     const chars =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-
     let frame = 0;
 
-    const totalFrames = duration / 50;
-
+    const intervalTime = 25;
+    const totalFrames = duration / intervalTime;
 
     const interval = setInterval(()=>{
 
-
         let output = "";
 
-
         for(let i = 0; i < finalText.length; i++){
-
 
             if(i < (frame / totalFrames) * finalText.length){
 
@@ -52,23 +47,19 @@ function scrambleText(element, finalText, duration = 2000){
 
         }
 
-
-        element.innerHTML = output;
-
+        element.textContent = output;
 
         frame++;
-
 
         if(frame >= totalFrames){
 
             clearInterval(interval);
 
-            element.innerHTML = finalText;
+            element.textContent = finalText;
 
         }
 
-
-    },50);
+    }, intervalTime);
 
 }
 
@@ -530,58 +521,32 @@ function initProjectTilt(){
 
 
 
-
 /* =========================
    PAGE ANIMATIONS
 ========================= */
 
-
 function initAnimations(){
-
 
     console.log("initAnimations running");
 
-
-
     gsap.from(".menu-btn",{
-
         y:-50,
-
         opacity:0,
-
-        duration:1
-
+        duration:0.8
     });
-
-
 
     gsap.from(".hero-tag",{
-
-        x:-100,
-
+        x:-80,
         opacity:0,
-
-        duration:1,
-
-        delay:.3
-
+        duration:0.8,
+        delay:0.2
     });
-
-
-
-
 
     const name =
     document.querySelector(".hero h1");
 
-
-
     const title =
     document.querySelector(".hero h2");
-
-
-
-
 
     if(name){
 
@@ -589,70 +554,37 @@ function initAnimations(){
             opacity:1
         });
 
-
-
         scrambleText(
             name,
             "Benjamin Pham",
-            2000
+            900
         );
 
     }
 
-
-
-
-
     if(title){
-
 
         gsap.set(title,{
             opacity:1
         });
 
-
-
-        setTimeout(()=>{
-
-
-            scrambleText(
-                title,
-                "Cybersecurity Analyst",
-                2000
-            );
-
-
-        },1800);
-
+        scrambleText(
+            title,
+            "Cybersecurity Analyst",
+            900
+        );
 
     }
 
-
-
-
-
     gsap.from(".hero-description",{
-
-        y:40,
-
+        y:30,
         opacity:0,
-
-        duration:1,
-
-        delay:4
-
+        duration:0.8,
+        delay:1
     });
 
-
-
-
-
     initProjects();
-
     initProjectDetails();
-
     initProjectTilt();
-
-
 
 }
