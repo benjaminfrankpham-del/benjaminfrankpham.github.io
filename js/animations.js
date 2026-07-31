@@ -715,3 +715,30 @@ function initAnimations(){
     initProjectTilt();
 
 }
+
+const indicator = document.querySelector(".scroll-indicator");
+const contact = document.querySelector("#contact");
+
+if (indicator && contact) {
+
+    const observer = new IntersectionObserver((entries) => {
+
+        if (entries[0].isIntersecting) {
+
+            indicator.style.opacity = "0";
+            indicator.style.pointerEvents = "none";
+
+        } else {
+
+            indicator.style.opacity = ".8";
+            indicator.style.pointerEvents = "auto";
+
+        }
+
+    }, {
+        threshold: 0.2
+    });
+
+    observer.observe(contact);
+
+}

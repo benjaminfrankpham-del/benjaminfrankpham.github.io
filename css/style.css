@@ -123,13 +123,12 @@ body{
 
 
 
-.logo{
-
-    font-size:22px;
-
-    font-weight:600;
-
+.logo img {
+    height: 40px;
+    width: auto;
+    margin-left: -50px; /* Adjust this number to pull it further left */
 }
+
 
 
 
@@ -185,15 +184,6 @@ body{
     transform-origin:center;
 
 }
-
-
-
-
-
-/* =========================
-   HERO
-========================= */
-
 
 /* =========================
    HOMEPAGE HERO
@@ -610,7 +600,26 @@ body{
 /* =========================
    SKILLS
 ========================= */
+.skills-header{
 
+    text-align:center;
+    margin-bottom:70px;
+
+}
+
+.skills-header h2{
+
+    font-size:4rem;
+    margin-bottom:10px;
+
+}
+
+.skills-header p{
+
+    color:#94A3B8;
+    font-size:1.1rem;
+
+}
 
 .skills-list{
 
@@ -2998,9 +3007,9 @@ ABOUT SECTION
 
 .scroll-indicator{
 
-    position:absolute;
+    position:fixed;
 
-    bottom:40px;
+    bottom:35px;
 
     left:50%;
 
@@ -3023,6 +3032,10 @@ ABOUT SECTION
     text-transform:uppercase;
 
     opacity:.8;
+
+    z-index:1000;
+
+    transition:opacity .4s ease;
 
 }
 
@@ -3505,6 +3518,10 @@ PROJECT POPUP
 
 }
 
+/* Challenge text */
+.challenge-box p{
+    color:#ff7b7b;
+}
 
 
 
@@ -3536,6 +3553,11 @@ PROJECT POPUP
 
 }
 
+/* Solution text */
+.solution-box p{
+    color:#6dffb1;
+}
+
 
 
 
@@ -3564,10 +3586,15 @@ PROJECT POPUP
 
 .tech-container span{
 
+    display:inline-flex;
 
-    padding:8px 15px;
+    align-items:center;
 
-    border-radius:20px;
+    justify-content:center;
+
+    padding:10px 18px;
+
+    border-radius:999px;
 
     background:#182532;
 
@@ -3575,6 +3602,30 @@ PROJECT POPUP
 
     border:1px solid #4DA3FF;
 
+    font-size:.95rem;
+
+    font-weight:500;
+
+    cursor:default;
+
+    transition:all .3s ease;
+
+}
+
+.tech-container span:hover{
+
+    transform:translateY(-4px);
+
+    background:#4DA3FF;
+
+    color:#ffffff;
+
+    border-color:#4DA3FF;
+
+    box-shadow:
+        0 0 12px rgba(77,163,255,.45),
+        0 0 25px rgba(77,163,255,.25),
+        0 10px 25px rgba(77,163,255,.35);
 
 }
 
@@ -3612,6 +3663,11 @@ PROJECT POPUP
 
     color:#4DA3FF;
 
+}
+
+/* What I Learned text */
+.learned-box p{
+    color:#7cc5ff;
 }
 
 
