@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# AI Fraud Detection large files
+project/AI-Fraud-Detection-Analytics/data/*.csv
+
+# Models
+project/AI-Fraud-Detection-Analytics/models/*.pkl
+
+# Databases
+project/AI-Fraud-Detection-Analytics/database/*.db
+
+# Jupyter
+.ipynb_checkpoints/

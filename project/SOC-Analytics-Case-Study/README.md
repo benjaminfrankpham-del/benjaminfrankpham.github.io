@@ -43,10 +43,6 @@ This assessment evaluates key operational areas within a Security Operations Cen
 + Risk score analysis
 + Operational KPI reporting
 
-## Tools Used
-
-work in progress
-
 ## Skills Demonstrated
 # Coding Languages
 + Python
