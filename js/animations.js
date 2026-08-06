@@ -730,3 +730,46 @@ function initAnimations(){
 
 }
 
+/* =========================
+   HIDE SCROLL INDICATOR AT CONTACT
+========================= */
+
+const scrollIndicator = document.querySelector(".scroll-indicator");
+const contactSection = document.querySelector("#contact");
+
+if (scrollIndicator && contactSection) {
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                gsap.to(scrollIndicator, {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.4,
+                    pointerEvents: "none"
+                });
+
+            } else {
+
+                gsap.to(scrollIndicator, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.4,
+                    pointerEvents: "auto"
+                });
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    observer.observe(contactSection);
+
+}
+
