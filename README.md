@@ -1,29 +1,29 @@
-# Benjamin Pham — Professional Portfolio
+# Professional Portfolio
 
-Personal portfolio website showcasing my professional experience, technical skills, projects, and career development across cybersecurity, data analytics, machine learning, and risk analytics.
+Personal portfolio website showcasing professional experience, technical skills, projects, and work across cybersecurity, data analytics, machine learning, and risk analytics.
 
 **Live Portfolio:**  
-https://benjaminfrankpham-del.github.io/benjaminfrankpham.github.io/
+https://github.com/benjaminfrankpham-del
 
 ---
 
-## About
+## Overview
 
-I am a SOC Analyst with a background in Information Systems and a growing focus on data analytics, risk analytics, machine learning, and data-driven decision making.
+A professional portfolio focused on the intersection of cybersecurity, data analytics, machine learning, and risk analytics.
 
-My portfolio demonstrates my ability to work across the full analytics lifecycle, including:
+The portfolio demonstrates experience across the analytics lifecycle, including:
 
-- Data collection and preparation
-- Exploratory data analysis
+- Data preparation and analysis
 - SQL-based business analysis
-- Python automation and modeling
+- Python development and automation
 - Machine learning
-- Risk and fraud analytics
+- Fraud and risk analytics
 - Data visualization
 - Dashboard development
 - Data engineering
+- Cybersecurity analytics
 
-I am particularly interested in opportunities that combine technology, analytics, risk, and business impact.
+Projects emphasize the connection between technical implementation, analytical insights, and business impact.
 
 ---
 
@@ -31,7 +31,7 @@ I am particularly interested in opportunities that combine technology, analytics
 
 ### SOC Analytics Case Study
 
-A security operations analytics project focused on analyzing SOC alerts, analyst performance, risk, false positives, and SLA compliance.
+Security operations analytics project focused on analyzing SOC alerts, analyst performance, risk, false positives, and SLA compliance.
 
 **Technologies:**
 - Python
@@ -54,7 +54,7 @@ A security operations analytics project focused on analyzing SOC alerts, analyst
 
 ### AI Fraud Detection & Analytics
 
-An end-to-end machine learning project designed to identify fraudulent financial transactions and analyze transaction-level risk.
+End-to-end machine learning project designed to identify fraudulent financial transactions and analyze transaction-level risk.
 
 **Technologies:**
 - Python
@@ -78,7 +78,7 @@ An end-to-end machine learning project designed to identify fraudulent financial
 
 ### Customer Churn & Revenue Analytics
 
-A customer analytics project focused on identifying churn patterns, analyzing revenue exposure, and developing customer risk segments.
+Customer analytics project focused on identifying churn patterns, analyzing revenue exposure, and developing customer risk segments.
 
 **Technologies:**
 - Python
@@ -102,13 +102,11 @@ A customer analytics project focused on identifying churn patterns, analyzing re
 
 ### Financial Risk Analytics Data Platform
 
-A data engineering and financial analytics project focused on building a scalable data platform for financial risk analysis.
+Data engineering and financial analytics project focused on developing a scalable platform for financial risk analysis.
 
 **Technologies:**
 - Python
 - SQL
-- Snowflake
-- dbt
 - Data Engineering
 - Data Quality
 
@@ -148,8 +146,6 @@ A data engineering and financial analytics project focused on building a scalabl
 
 ### Cloud & Data Engineering
 - AWS
-- Snowflake
-- dbt
 - Data Pipelines
 - Data Quality
 
@@ -166,14 +162,13 @@ A data engineering and financial analytics project focused on building a scalabl
 ### Frameworks & Methodologies
 - NIST
 - MITRE ATT&CK
-- SQL Analytics
 - Agile
 
 ---
 
 ## Website Features
 
-The portfolio website includes:
+The portfolio includes:
 
 - Professional experience
 - Technical skills
@@ -182,7 +177,7 @@ The portfolio website includes:
 - Project screenshots and visualizations
 - Resume
 - Contact information
-- Links to GitHub repositories
+- Links to individual GitHub repositories
 
 ---
 
