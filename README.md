@@ -3,7 +3,7 @@
 Personal portfolio website showcasing professional experience, technical skills, projects, and work across cybersecurity, data analytics, machine learning, and risk analytics.
 
 **Live Portfolio:**  
-https://github.com/benjaminfrankpham-del
+https://benjaminfrankpham-del.github.io/benjaminfrankpham.github.io/
 
 ---
 
@@ -28,6 +28,32 @@ Projects emphasize the connection between technical implementation, analytical i
 ---
 
 ## Featured Projects
+
+### AWS Cloud Operations & Permission Monitoring
+
+Cloud operations automation project designed to monitor AWS resources across development, staging, and production environments, identify configuration and permission issues, and streamline cloud support workflows.
+
+**Technologies:**
+
+- AWS
+- Python
+- Boto3
+- AWS CLI
+- IAM Identity Center
+- Amazon S3
+- Cloud Automation
+
+**Key Focus:**
+
+- AWS resource inventory automation
+- Development, staging, and production environment monitoring
+- IAM and permission analysis
+- S3 security configuration monitoring
+- AWS resource tagging
+- Cloud operations automation
+- Security and risk detection
+
+[View Project →](https://github.com/benjaminfrankpham-del/AWS-Cloud-Operations-Automation)
 
 ### SOC Analytics Case Study
 
@@ -97,27 +123,6 @@ Customer analytics project focused on identifying churn patterns, analyzing reve
 - Explainable machine learning
 
 [View Project →](https://github.com/benjaminfrankpham-del/Customer-Churn-Revenue-Analytics)
-
----
-
-### Financial Risk Analytics Data Platform
-
-Data engineering and financial analytics project focused on developing a scalable platform for financial risk analysis.
-
-**Technologies:**
-- Python
-- SQL
-- Data Engineering
-- Data Quality
-
-**Key Focus:**
-- Financial risk analytics
-- Data pipelines
-- Data transformation
-- Data quality testing
-- Analytical data modeling
-
-[View Project →](https://github.com/benjaminfrankpham-del/Financial-Risk-Analytics-Data-Platform)
 
 ---
 
